@@ -1,0 +1,9 @@
+Model,Attack,Attack Success Rate,N Samples,Avg Perturbation
+Random Forest,FGSM,0.0,150,0.5477225575051663
+Random Forest,PGD,0.0,150,0.5477225575051663
+Random Forest,GeneticAlgorithm,0.0,50,0.16509228351281105
+Random Forest,Random,0.0,150,0.325213692396504
+Logistic Regression,FGSM,0.0,150,0.5477225575051663
+Logistic Regression,PGD,0.0,150,0.5477225575051663
+Logistic Regression,GeneticAlgorithm,0.0,50,0.531696173443287
+Logistic Regression,Random,0.0,150,0.325213692396504

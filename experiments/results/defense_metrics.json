@@ -1,0 +1,17 @@
+{
+  "adversarial_training": {
+    "clean_accuracy": 1.0,
+    "clean_f1": 1.0,
+    "clean_auc": 1.0
+  },
+  "input_validation": {
+    "clean_accuracy": 1.0,
+    "clean_f1": 1.0,
+    "clean_auc": 1.0
+  },
+  "ensemble": {
+    "clean_accuracy": 1.0,
+    "clean_f1": 1.0,
+    "clean_auc": 1.0
+  }
+}

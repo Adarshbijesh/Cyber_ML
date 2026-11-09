@@ -1,0 +1,46 @@
+{
+  "Random Forest": {
+    "FGSM": {
+      "attack_success_rate": 0.0,
+      "n_samples": 150,
+      "avg_perturbation": 0.5477225575051663
+    },
+    "PGD": {
+      "attack_success_rate": 0.0,
+      "n_samples": 150,
+      "avg_perturbation": 0.5477225575051663
+    },
+    "GeneticAlgorithm": {
+      "attack_success_rate": 0.0,
+      "n_samples": 50,
+      "avg_perturbation": 0.16509228351281105
+    },
+    "Random": {
+      "attack_success_rate": 0.0,
+      "n_samples": 150,
+      "avg_perturbation": 0.325213692396504
+    }
+  },
+  "Logistic Regression": {
+    "FGSM": {
+      "attack_success_rate": 0.0,
+      "n_samples": 150,
+      "avg_perturbation": 0.5477225575051663
+    },
+    "PGD": {
+      "attack_success_rate": 0.0,
+      "n_samples": 150,
+      "avg_perturbation": 0.5477225575051663
+    },
+    "GeneticAlgorithm": {
+      "attack_success_rate": 0.0,
+      "n_samples": 50,
+      "avg_perturbation": 0.531696173443287
+    },
+    "Random": {
+      "attack_success_rate": 0.0,
+      "n_samples": 150,
+      "avg_perturbation": 0.325213692396504
+    }
+  }
+}

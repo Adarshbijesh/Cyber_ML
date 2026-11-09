@@ -1,0 +1,57 @@
+{
+  "random_forest": {
+    "val": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    "test": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    "train_time_s": 1.3603324890136719,
+    "model_path": "C:\\Users\\adars\\Downloads\\malware-robustness\\models\\baseline\\random_forest.joblib"
+  },
+  "gradient_boosting": {
+    "val": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    "test": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    "train_time_s": 11.146255731582642,
+    "model_path": "C:\\Users\\adars\\Downloads\\malware-robustness\\models\\baseline\\gradient_boosting.joblib"
+  },
+  "logistic_regression": {
+    "val": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    "test": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    "train_time_s": 0.12223124504089355,
+    "model_path": "C:\\Users\\adars\\Downloads\\malware-robustness\\models\\baseline\\logistic_regression.joblib"
+  },
+  "best_model": "random_forest"
+}
