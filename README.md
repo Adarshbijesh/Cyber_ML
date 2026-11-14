@@ -28,10 +28,9 @@ The attacks and classifiers are established methods rather than newly proposed a
 - **Random Forest:** Tree-ensemble baseline; also used as the adversarial-training model and within the soft-voting ensemble.
 - **Gradient Boosting:** Boosted decision trees used as a baseline and ensemble member.
 - **Logistic Regression:** Linear baseline and differentiable surrogate used to guide FGSM and PGD perturbations.
+- **CNN:** A PyTorch 1-D convolutional neural network trained on the same 50-feature vectors. It is included in baseline evaluation and can be selected in the Malware Detection dashboard.
 
-### Deep-learning models
-
-No deep-learning models are currently implemented. The models are Scikit-learn classical ML estimators; XGBoost appears in the dependency list but is not part of the current training pipeline.
+The CNN uses PyTorch; install the project dependencies from `requirements.txt` in the same Python environment used to launch Streamlit. If PyTorch is unavailable, the dashboard omits CNN from its classifier choices. XGBoost appears in the dependency list but is not part of the current training pipeline.
 
 ### Attack simulations
 
@@ -118,6 +117,16 @@ Run the dashboard:
 python -m streamlit run app.py
 ```
 
+The Detection page lists the trained Random Forest, Gradient Boosting, Logistic Regression, and CNN models. The CNN option appears when PyTorch is installed and `models/baseline/cnn.pt` exists.
+
+Train or refresh all baseline models (including CNN) using the active environment:
+
+```powershell
+python -c "from src.train import train_all_models; train_all_models()"
+```
+
+This writes scikit-learn models as `.joblib` files and the CNN weights to `models/baseline/cnn.pt`. Keep the saved models and the Python/scikit-learn environment together; if a saved `.joblib` model fails to load after a dependency-version change, retrain the baseline models in the active environment with the command above.
+
 Run the end-to-end experiment pipeline:
 
 ```powershell
@@ -145,7 +154,7 @@ Prediction inputs must follow the feature names and order expected by the saved 
 
 ## Metrics and Interpretation
 
-The synthetic pipeline writes results under `experiments/results/`. Its current baseline metrics report 1.0 accuracy, precision, recall, F1, and ROC-AUC for all three models. Those values reflect the generated synthetic data's strong class separation and are **not evidence of equivalent performance on real malware**. The EMBER converter only prepares data; it does not train or evaluate models.
+The synthetic pipeline writes results under `experiments/results/`. Baseline metrics for Random Forest, Gradient Boosting, Logistic Regression, and CNN are saved to `experiments/results/baseline_metrics.json`. The generated synthetic data can have very high scores because of its strong class separation; these metrics are **not evidence of equivalent performance on real malware**. The EMBER converter only prepares data; it does not train or evaluate models.
 
 For meaningful real-world evaluation, use a sufficiently large, documented benchmark sample, preserve its train/test protocol, and report dataset version, label handling, and preprocessing. Do not compare EMBER metrics directly with synthetic dataset metrics.
 
@@ -170,4 +179,4 @@ requirements.txt         Python dependencies
 - Do not run unknown executable samples as part of this feature-vector workflow.
 - Adversarial examples are arrays of modified values, not valid or modified malware binaries.
 - The synthetic dataset is unsuitable for claims about real-world detection quality.
-- EMBER preprocessing converts the extracted 2017 JSONL feature release to standalone CSVs; raw PE feature extraction, EMBER model training, deep-learning models, and production deployment are outside the current implementation.
+- EMBER preprocessing converts the extracted 2017 JSONL feature release to standalone CSVs; raw PE feature extraction, training/evaluating models on EMBER, advanced deep-learning detectors, and production deployment are outside the current implementation.
